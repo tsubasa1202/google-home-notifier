@@ -3,10 +3,12 @@ var googlehome = require('./google-home-notifier');
 var ngrok = require('ngrok');
 var bodyParser = require('body-parser');
 var app = express();
-const serverPort = 8091; // default port
+const serverPort = 8009; // default port
+var language = 'ja'; // default language code
+googlehome.device('適当な文字列' ,language); //これが喋らせる上で重要
 
 var deviceName = 'Google Home';
-var ip = '192.168.1.20'; // default IP
+var ip = '192.168.1.27'; // default IP
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -21,7 +23,6 @@ app.post('/google-home-notifier', urlencodedParser, function (req, res) {
      ip = req.query.ip;
   }
 
-  var language = 'pl'; // default language code
   if (req.query.language) {
     language;
   }
@@ -62,12 +63,12 @@ app.get('/google-home-notifier', function (req, res) {
      ip = req.query.ip;
   }
 
-  var language = 'pl'; // default language code
+ 
   if (req.query.language) {
     language;
   }
 
-  googlehome.ip(ip, language);
+  googlehome.ip(ip, language); //このlanguageはいらなそう
 
   if (text) {
     try {
