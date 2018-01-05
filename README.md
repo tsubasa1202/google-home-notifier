@@ -1,3 +1,29 @@
+# Google Homeの喋らせ方使い方
+必要なモジュールをインストール
+```
+npm install
+```
+サーバーを好きなポートで起動（デフォルト設定は8009）
+```
+node example.js
+```
+ngrokで外部からローカルサーバーを叩けるようにする
+```
+ngrok http 8009
+```
+テスト実行(ブラウザから)
+```
+https://<ランダムな数>.ngrok.io/google-home-notifier?text=テストだよ
+```
+テスト実行(POST)
+```
+curl -i -X POST \
+   -H "Content-Type:application/x-www-form-urlencoded" \
+   -d \
+'text=テストだよ' \
+ 'http://<ランダムな数>.ngrok.io/google-home-notifier'
+ ```
+
 # google-home-notifier
 Send notifications to Google Home
 
