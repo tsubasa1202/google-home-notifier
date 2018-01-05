@@ -13,7 +13,7 @@ ngrok http 8009
 ```
 テスト実行(ブラウザから)
 ```
-https://<ランダムな数>.ngrok.io/google-home-notifier?text=テストだよ
+https://<ngrokの自動生成されるサブドメイン>.ngrok.io/google-home-notifier?text=テストだよ
 ```
 テスト実行(POST)
 ```
@@ -21,7 +21,7 @@ curl -i -X POST \
    -H "Content-Type:application/x-www-form-urlencoded" \
    -d \
 'text=テストだよ' \
- 'http://<ランダムな数>.ngrok.io/google-home-notifier'
+ 'http://<ngrokの自動生成されるサブドメイン>.ngrok.io/google-home-notifier'
  ```
 
 # google-home-notifier
