@@ -5,12 +5,9 @@ npm install
 ```
 サーバーを好きなポートで起動（デフォルト設定は8009）
 ```
-node example.js
+node main.js
 ```
-ngrokで外部からローカルサーバーを叩けるようにする
-```
-ngrok http 8009
-```
+ローカルのポートとngrokのサーバーが立ち上がる  
 テスト実行(ブラウザから)
 ```
 https://<ngrokの自動生成されるサブドメイン>.ngrok.io/google-home-notifier?text=テストだよ
