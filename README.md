@@ -1,4 +1,4 @@
-# Google Homeの喋らせ方使い方
+# Google Homeの喋らせ方
 必要なモジュールをインストール
 ```
 npm install
